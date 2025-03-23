@@ -18,3 +18,43 @@
 #Player two's highest number is 8 at index 1
 #Player one's lowest number is 1 at index 4
 #Player two's lowest number is 1 at index 5
+
+import random
+
+#Lists for both players
+first_Player = [random.randint(1, 50) for _ in range(10)]
+second_Player = [random.randint(1, 50) for _ in range(10)]
+
+#Win Record/Counters
+first_Player_wins = 0
+second_Player_wins = 0
+
+for i in range(10):
+    if first_Player[i] > second_Player[i]:
+        first_Player_wins += 1
+    elif second_Player[i] > first_Player[i]:
+        second_Player_wins += 1
+
+#First Player's high/low number record
+highest_first_Player = max(first_Player)
+highest_FirstPlayer_index = first_Player.index(highest_first_Player)
+lowest_first_Player = min(first_Player)
+lowest_FirstPlayer_index = first_Player.index(lowest_first_Player)
+
+#Second Player's high/low number record
+highest_second_Player = max(second_Player)
+highest_SecondPlayer_index = second_Player.index(highest_second_Player)
+lowest_second_Player = min(second_Player)
+lowest_SecondPlayer_index = second_Player.index(lowest_second_Player)
+
+#Display to players
+print(f"Player 1 = {first_Player}")
+print(f"Player 2 = {second_Player}")
+print(f"Player 1 has won {first_Player_wins} times.")
+print(f"Player 2 has won {second_Player_wins} times.")
+print(f"Player 1's highest number is {highest_first_Player} at index {highest_FirstPlayer_index}.")
+print(f"Player 2's highest number is {highest_second_Player} at index {highest_SecondPlayer_index}.")
+print(f"Player 1's lowest number is {lowest_first_Player} at index {lowest_FirstPlayer_index}.")
+print(f"Player 2's lowest number is {lowest_second_Player} at index {lowest_SecondPlayer_index}.")
+
+#End of script
